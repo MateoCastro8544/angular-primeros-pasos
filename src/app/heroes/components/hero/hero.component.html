@@ -1,0 +1,28 @@
+<h1 class="bg-red-400">{{name}}</h1>
+
+<dl class=" ml-7">
+  <td>Nombre:</td>
+  <dd> {{name}} </dd>
+
+  <td>Edad:</td>
+  <dd> {{age}} </dd>
+
+  <td>Metodo:</td>
+  <dd> {{greet()}} </dd>
+
+  <td>Capitalizado:</td>
+  <dd> {{nameUpperCase}} </dd>
+</dl>
+
+
+<button *ngIf="name !== 'Spiderman'" (click)="changeHero()"
+  class="mx-5 border-2 border-blue-400 p-2 bg-blue-400 rounded-md mt-5 text-white">
+  Cambiar Nombre
+</button>
+<button *ngIf="age!==80" (click)="changeName()"
+  class="mx-5 border-2 border-blue-400 p-2 bg-blue-400 rounded-md mt-5 text-white">
+  Cambiar Edad
+</button>
+<button (click)="resetForm()" class="mx-5 border-2 border-blue-400 p-2 bg-blue-400 rounded-md mt-5 text-white">
+  Reset Form
+</button>

@@ -1,0 +1,16 @@
+<h1 class="text-2xl text-center font-extrabold">DBZ Personajes</h1>
+<hr />
+
+<div class="ml-5 flex">
+  <div class="w-1/2">
+    <dbz-list
+      [characterList]="characters"
+      (onDelete)="onDeleteCharacter($event)"
+    ></dbz-list>
+  </div>
+  <div class="w-1/2">
+    <dbz-add-character
+      (onNewCharacter)="onNewCharacter($event)"
+    ></dbz-add-character>
+  </div>
+</div>

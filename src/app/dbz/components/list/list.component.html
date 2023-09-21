@@ -1,0 +1,33 @@
+<h4 class="text-3xl font-bold m-2">Listado</h4>
+<ul class="w-1/2 flex-row">
+  <li
+    *ngFor="
+      let character of characterList;
+      let i = index;
+      let isfirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+    class="border border-black p-2 w-full flex"
+    [ngClass]="{ 'bg-lime-400': isfirst }"
+  >
+    <span class="text-sm text-blue-400 mr-2">{{ i + 1 }}</span>
+    <span>{{ character.name }}</span>
+    -
+    <strong> {{ character.power }} </strong>
+    <div class="w-full flex justify-end">
+      <button
+        class="ml-2 bg-red-600 p-2 rounded-md w-10 text-white"
+        (click)="onDeleteCharacter(character.id!)"
+      >
+        X
+      </button>
+    </div>
+
+    <!-- <span>Es el primero {{ isfirst }} </span>
+    <span>Es el ultimo {{ isLast }}</span>
+    <span>Es Par {{isEven}}</span>
+    <span>Es Impar {{isOdd}}</span> -->
+  </li>
+</ul>
